@@ -1,0 +1,39 @@
+<?php
+?>
+<html>
+<head>
+    <title>Transport-Display</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/axios-0.20.0.min.js"></script>
+    <script src="/js/moment-2.27.0.min.js"></script>
+    <script src="/js/vue-2.6.12.min.js"></script>
+    <script src="/js/main.js" defer></script>
+</head>
+<body>
+    <div id="app">
+        <div id="header">
+            <div class="left">
+                {{ stop.name }}
+            </div>
+            <div class="right">
+                {{ time.hours }}<span :class="{ hide: time.blink }">:</span>{{ time.minutes }}
+            </div>
+        </div>
+        <table id="calls">
+            <tbody>
+                <tr class="call" v-for="departure in departures" :key="departure.id">
+                    <td class="line">
+                        {{ departure.line }}
+                    </td>
+                    <td class="destination">
+                        {{ departure.destination }}
+                    </td>
+                    <td class="time">
+                        {{ departure.time }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
