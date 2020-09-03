@@ -1,0 +1,57 @@
+html {
+    font-family: '5by7';
+    font-size: 9vh;
+    color: white;
+}
+
+body {
+    background-color: black;
+    padding: 0.1rem;
+}
+
+@font-face {
+    font-family: '5by7';
+    src: url('/fonts/5by7.otf');
+}
+
+div {
+    font-size: 1rem;
+}
+
+#header {
+    margin-bottom: 0.4rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+td {
+    font-size: 1rem;
+    padding-bottom: 0.4rem;
+}
+
+tr:last-child td {
+    padding-bottom: 0;
+}
+
+#calls {
+    width: 100%;
+    color: #ff9933;
+}
+
+#calls .line {
+    width: 1%;
+    white-space: nowrap;
+    text-align: right;
+    padding-right: 0.3rem;
+}
+
+#calls .time {
+    width: 1%;
+    white-space: nowrap;
+    text-align: right;
+}
+
+.hide {
+    color: black;
+}
