@@ -68,7 +68,7 @@ foreach ($xml->xpath('//trias:StopEvent') as $stop) {
         $time = $time_estimated_array[0];
     }
 
-    $time = date('H:i', strtotime($time[0]));
+    $time = date('c', strtotime($time[0]));
 
     if (isset($config['name_transforms'][$destination])) {
         $destination = $config['name_transforms'][$destination];
@@ -86,8 +86,12 @@ foreach ($xml->xpath('//trias:StopEvent') as $stop) {
 }
 
 usort($data['departures'], function ($a, $b) {
-
+    return $a['time'] <=> $b['time'];
 });
+
+for ($i = 0; $i < count($data['departures']); $i++) {
+    $data['departures'][$i]['time'] = substr($data['departures'][$i]['time'], 11, 5);
+}
 
 header('Content-Type: application/json; charset=utf8');
 echo json_encode($data, \JSON_UNESCAPED_UNICODE);
