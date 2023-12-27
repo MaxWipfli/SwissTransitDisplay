@@ -26,3 +26,7 @@ The display can be configured using the `src/config.json` file. An example is pr
 * **stop_id**: The DiDok ID of the stop (e.g. 8591316 for "Zürich, Rennweg"). The ID can be found most easily on [this map](https://map.geo.admin.ch/?layers=ch.bav.haltestellen-oev). Click on any transit stop icon, then "More info". The ID can be found in the "Number" field.
 * **stop_name**: The name of the stop as display on the top.
 * **name_transformations**: An object which can be used to change how certain stops are displayed. For example, "Zürich Enge, Bahnhof" might be changed to "Bahnhof Enge", as it is probably obvious that it is located in Zurich. The key describes the official name as provided by the API and the value can be changed as preferred.
+
+## Docker
+
+The repository contains a `Dockerfile` to build a container image for the service. When using it, mount the configuration file to `/config.json` in the container's file system.
